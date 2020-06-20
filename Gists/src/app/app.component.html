@@ -1,0 +1,41 @@
+<div class="header">
+  <h1>THIS IS THE GIST CLIENT, YOU KNOW!</h1>
+</div>
+<form class="main-form" [formGroup]="this.options" (ngSubmit)="setValuesFromControls()">
+  <div *ngIf="isLogged(); then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <mat-form-field>
+      <input matInput formControlName="id" placeholder="ID" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="filename" placeholder="Filename">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput formControlName="content" placeholder="Text"></textarea>
+    </mat-form-field>
+    <mat-list class="button-list">
+      <mat-list-item>
+        <button mat-raised-button class="button-list-item" (click)="get()">Read</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button class="button-list-item" (click)="create()">Create</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button class="button-list-item" (click)="save()">Update</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button class="button-list-item" (click)="delete()">Delete</button>
+      </mat-list-item>
+      <mat-list-item *ngIf="isLogged()">
+        <button mat-raised-button class="button-list-item" (click)="logout()">Logout</button>
+      </mat-list-item>
+    </mat-list>
+<!--    <h1>Token {{clientToken}}</h1>-->
+  </ng-template>
+  <ng-template #elseBlock>
+    <div>
+      <h1>You are not authorized</h1>
+      <button mat-raised-button class="button-list-item" (click)="login()">Login</button>
+    </div>
+  </ng-template>
+</form>

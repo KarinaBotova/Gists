@@ -1,0 +1,3 @@
+# Project exclude paths
+/AuthServer/node_modules/
+.idea/vcs.xml
