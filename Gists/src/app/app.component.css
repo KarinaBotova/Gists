@@ -10,7 +10,7 @@ color: black;
 .main-form {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 50%;
   margin: 8%;
   padding: 5%;
   border: 1px solid black;
