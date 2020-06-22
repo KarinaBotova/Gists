@@ -10,10 +10,10 @@ color: black;
 .main-form {
   display: flex;
   flex-direction: column;
-  alignment: center;
+  align-items: center;
   justify-content: space-between;
   width: 50%;
-  margin: 8%;
+  margin: 20%;
   padding: 5%;
   border: 1px solid black;
 }
